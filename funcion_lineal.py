@@ -11,13 +11,13 @@ def operacion():
     
     def func_lineal():
     
-        def funcion_lineal(m, b, x):
-            return m*x + b
+        def funcion_lineal(m1, b1, x):
+            return m1*x + b1
         
-        m.set(5)
-        b.set(4)
-        m1 = int(m.get())
-        b1 = int(b.get())
+        #m.set(5)
+        #b.set(4)
+        m1 = int(entry_m.get())
+        b1 = int(entry_b.get())
 
         
         
@@ -40,14 +40,16 @@ def operacion():
 
     
     
-    m = StringVar()
-    b = StringVar()
+    #m = StringVar()
+    #b = StringVar()
 
     frame_entrada = Frame(ventana_secundaria)
     frame_entrada.config(bg = "light grey", width = 380 , height = 280)
     frame_entrada.place(x = 10, y = 10)
 
-
+    bt_convertir = Button(frame_entrada, text="Ejecutar",bg="slategray4", fg="light grey", command=func_lineal)
+    bt_convertir.place(x=125, y=240, width=120, height=30)
+    
 
     titulo = Label(frame_entrada, text = "Graficador de función Lineal")
     titulo.config(bg = "light grey", fg = "gray21", font = ("Rubik",18))
@@ -63,24 +65,22 @@ def operacion():
     
     # Entry para la pendiente "m"
 
-    entry_s = Entry(frame_entrada, textvariable= m)
-    entry_s.config(font=("Rubik",20), justify=LEFT, fg="gray21")
-    entry_s.focus_set()
-    entry_s.place(x=200, y=150, width=115, height=30)
+    entry_m = Entry(frame_entrada)
+    entry_m.config(font=("Rubik",20), justify=LEFT, fg="gray21")
+    entry_m.focus_set()
+    entry_m.place(x=200, y=150, width=115, height=30)
     
 
     
     # Entry para el corte en el eje y "b"
 
-    entry_b = Entry(frame_entrada, textvariable= b)
+    entry_b = Entry(frame_entrada)
     entry_b.config(font=("Rubik",20), justify=LEFT, fg="gray21")
     entry_b.place(x=200, y=190, width=115, height=30)
     
 
 
 
-    bt_convertir = Button(frame_entrada, text="Ejecutar",bg="slategray4", fg="light grey", command= func_lineal)
-    bt_convertir.place(x=125, y=240, width=120, height=30)
     
     
 

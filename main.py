@@ -14,7 +14,6 @@ ventana_principal.config(bg="snow")
 
 
 
-x = StringVar()
 
 frame_entrada = Frame(ventana_principal)
 frame_entrada.config(bg = "light grey", width = 380 , height = 240)
