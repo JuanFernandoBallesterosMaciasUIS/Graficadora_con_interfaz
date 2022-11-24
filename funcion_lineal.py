@@ -4,7 +4,7 @@ from tkinter import messagebox
 import numpy as np
 
 
-
+N = 100
 
     
 def operacion():   
@@ -14,12 +14,13 @@ def operacion():
         def funcion_lineal(m, b, x):
             return m*x + b
         
-        y = funcion_lineal(1,1,1)
-        #x = np.linspace(-10,10,num=N)
+        
+        x = np.linspace(-10,10,num=N)
+        y = funcion_lineal(2,3,x)
         # Crear la figura y los ejes
         fig, ax = plt.subplots()
         # Dibujar puntos
-        ax.scatter(5 , y)
+        ax.scatter(x , y)
         # Guardar el gráfico en formato png
         plt.savefig('diagrama-dispersion.png')
         # Mostrar el gráfico
